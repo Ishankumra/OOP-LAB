@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+class RectArea{
+    private:
+    float length;
+    float width;
+    float area;
+    public:
+    RectArea(float L){
+        length =L; 
+    }
+    RectArea(float L, float W){
+        length =L;
+        width =W;
+    }
+    RectArea(RectArea & obj){
+        length=obj.length;
+        width=obj.width;
+    }
+    void sqArea(){
+        area=length*length;
+    }
+    void rectArea(){
+        area=length*width;
+    }
+    float getRectArea(){
+        return area;
+    }
+    float getsqArea(){
+        return area;
+    }
+};
+int main(){
+    RectArea obj1(2);
+    RectArea obj2(2,5);
+    RectArea obj3=obj1;
+    obj1.sqArea();
+    obj2.rectArea();
+    obj3.sqArea();
+    cout<<obj1.getsqArea()<<endl;
+    cout<<obj2.getsqArea()<<endl;
+    cout<<obj3.getsqArea()<<endl;
+    return 0;
+}
