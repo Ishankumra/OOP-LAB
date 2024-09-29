@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+
+class person
+{
+    char name[30];
+    int age;
+
+    public:
+      void getdata(void);
+      void display(void);
+};
+void person::getdata(void)
+{
+    cout << "Enter name: ";
+    cin>>name;
+    cout << "Enter age: ";
+    cin>>age;
+}
+void person::display()
+{
+    cout<<name<<" : " <<age<<endl;
+}
+int main()
+{
+    person obj[5];
+    for (int i = 0; i < 5; i++)
+    {
+        obj[i].getdata();
+    }
+    for (int i = 0; i < 5; i++)
+    {
+        obj[i].display();
+    }
+    return 0;
+}
